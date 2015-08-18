@@ -23,18 +23,20 @@ module Dry
       end
     end
 
-    attr_reader :fn
+    module Mixin
+      attr_reader :fn
 
-    def initialize(fn, *)
-      @fn = fn
-    end
+      def initialize(fn, *)
+        @fn = fn
+      end
 
-    def call(input)
-      fn.(input)
-    end
+      def call(input)
+        fn.(input)
+      end
 
-    def >>(other)
-      Composite.new(self, other)
+      def >>(other)
+        Composite.new(self, other)
+      end
     end
   end
 end
