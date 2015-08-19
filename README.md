@@ -6,10 +6,6 @@
 <a href="https://codeclimate.com/github/dryrb/dry-pipeline" target="_blank">![Code Climate](https://codeclimate.com/github/dryrb/dry-pipeline/badges/gpa.svg)</a>
 <a href="http://inch-ci.org/github/dryrb/dry-pipeline" target="_blank">![Documentation Status](http://inch-ci.org/github/dryrb/dry-pipeline.svg?branch=master&style=flat)</a>
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dry/pipeline`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,15 +16,53 @@ gem 'dry-pipeline'
 
 And then execute:
 
-    $ bundle
+```sh
+$ bundle
+```
 
 Or install it yourself as:
-
-    $ gem install dry-pipeline
+```sh
+$ gem install dry-pipeline
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+USERS = []
+User = Struct.new(:id, :first_name, :last_name, :email)
+
+transform_user_attributes = Dry::Pipeline.new do |user_attributes|
+  allowed_keys = [:id, :first_name, :last_name, :email]
+
+  user_attributes.each_with_object({}) do |(key, value), hash|
+    next unless allowed_keys.include?(key.to_sym)
+    hash[key.to_sym] = value
+  end
+end
+
+validate_user_attributes = Dry::Pipeline.new do |user_attributes|
+  required_keys = [:first_name, :last_name, :email]
+
+  if (required_keys - user_attributes.keys).empty?
+    user_attributes
+  else
+    raise ':first_name, :last_name and :email must be present'
+  end
+end
+
+create_user = Dry::Pipeline.new do |user_attributes|
+  User.new(
+    USERS.length.next, *user_attributes.values_at(:first_name, :last_name, :email)
+  ).tap { |user| USERS << user }
+end
+
+(transform_user_attributes >> validate_user_attributes >> create_user)[
+  first_name: 'Jane',
+  last_name: 'Doe',
+  email: 'jane.doe@gmail.com'
+]
+# => #<struct User id=1, first_name="Jane", last_name="Doe", email="jane.doe@gmail.com">
+```
 
 ## Development
 
@@ -38,5 +72,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dry-pipeline.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dryrb/dry-pipeline.
 
