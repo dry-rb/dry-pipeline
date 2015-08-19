@@ -1,5 +1,5 @@
 module Dry
-  module Pipeline
+  class Pipeline
     class Composite
       attr_reader :left
       attr_reader :right

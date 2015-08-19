@@ -1,5 +1,5 @@
 module Dry
-  module Pipeline
+  class Pipeline
     module Mixin
       attr_reader :fn
 
@@ -12,7 +12,7 @@ module Dry
       end
 
       def >>(other)
-        Composite.new(self, other)
+        ::Dry::Pipeline::Composite.new(self, other)
       end
     end
   end

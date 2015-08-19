@@ -3,7 +3,7 @@ require 'dry/pipeline/mixin'
 require 'dry/pipeline/version'
 
 module Dry
-  module Pipeline
-
+  class Pipeline
+    include ::Dry::Pipeline::Mixin
   end
 end
