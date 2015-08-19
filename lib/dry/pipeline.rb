@@ -1,4 +1,4 @@
-require "dry/pipeline/version"
+require 'dry/pipeline/version'
 
 module Dry
   module Pipeline
