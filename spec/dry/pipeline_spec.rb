@@ -2,15 +2,15 @@ require 'spec_helper'
 
 describe Dry::Pipeline::Mixin do
   let(:fn1) do
-    Class.new { include Dry::Pipeline::Mixin }.new(-> str { str.reverse })
+    Dry::Pipeline.new(&:reverse)
   end
 
   let(:fn2) do
-    Class.new { include Dry::Pipeline::Mixin }.new(-> str { str.upcase })
+    Dry::Pipeline.new(-> str { str.upcase })
   end
 
   let(:fn3) do
-    Class.new { include Dry::Pipeline::Mixin }.new(-> str { str.split(' ') })
+    Dry::Pipeline.new(-> str { str.split(' ') })
   end
 
   let(:op) { -> str { str.upcase } }
