@@ -4,3 +4,12 @@
 # one by one as the offenses are removed from the code base.
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
+
+Style/Alias:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/StabbyLambdaParentheses:
+  EnforcedStyle: require_no_parentheses
