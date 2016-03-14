@@ -1,10 +1,10 @@
-# Dry::Pipeline <a href="https://gitter.im/dryrb/chat" target="_blank">![Join the chat at https://gitter.im/dryrb/chat](https://badges.gitter.im/Join%20Chat.svg)</a>
+# Dry::Pipeline <a href="https://gitter.im/dry-rb/chat" target="_blank">![Join the chat at https://gitter.im/dry-rb/chat](https://badges.gitter.im/Join%20Chat.svg)</a>
 
 <a href="https://rubygems.org/gems/dry-pipeline" target="_blank">![Gem Version](https://badge.fury.io/rb/dry-pipeline.svg)</a>
-<a href="https://travis-ci.org/dryrb/dry-pipeline" target="_blank">![Build Status](https://travis-ci.org/dryrb/dry-pipeline.svg?branch=master)</a>
-<a href="https://gemnasium.com/dryrb/dry-pipeline" target="_blank">![Dependency Status](https://gemnasium.com/dryrb/dry-pipeline.svg)</a>
-<a href="https://codeclimate.com/github/dryrb/dry-pipeline" target="_blank">![Code Climate](https://codeclimate.com/github/dryrb/dry-pipeline/badges/gpa.svg)</a>
-<a href="http://inch-ci.org/github/dryrb/dry-pipeline" target="_blank">![Documentation Status](http://inch-ci.org/github/dryrb/dry-pipeline.svg?branch=master&style=flat)</a>
+<a href="https://travis-ci.org/dry-rb/dry-pipeline" target="_blank">![Build Status](https://travis-ci.org/dry-rb/dry-pipeline.svg?branch=master)</a>
+<a href="https://gemnasium.com/dry-rb/dry-pipeline" target="_blank">![Dependency Status](https://gemnasium.com/dry-rb/dry-pipeline.svg)</a>
+<a href="https://codeclimate.com/github/dry-rb/dry-pipeline" target="_blank">![Code Climate](https://codeclimate.com/github/dry-rb/dry-pipeline/badges/gpa.svg)</a>
+<a href="http://inch-ci.org/github/dry-rb/dry-pipeline" target="_blank">![Documentation Status](http://inch-ci.org/github/dry-rb/dry-pipeline.svg?branch=master&style=flat)</a>
 
 ## Installation
 
@@ -72,5 +72,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/dryrb/dry-pipeline.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dry-rb/dry-pipeline.
 
